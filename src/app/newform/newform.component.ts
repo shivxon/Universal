@@ -11,7 +11,8 @@ import {HttpClient} from '@angular/common/http'
 export class NewFormComponent {
     serverUrl = 'http://localhost:3000/newform';
 
-    public newuserForm: FormGroup;
+    public jobdetailForm: FormGroup;
+    
     title = String;
     companyhq = String;
     companyName = String;
@@ -22,7 +23,7 @@ export class NewFormComponent {
   
   
     constructor( private router: Router, private  frmbuilder : FormBuilder,private http : HttpClient) {
-      this.newuserForm = frmbuilder.group({
+      this.jobdetailForm = frmbuilder.group({
   
   
         title : new FormControl(),
@@ -40,11 +41,11 @@ export class NewFormComponent {
     navigateOnBoarding() {
     
     }
-  save(newuserForm : any){
+  save(jobdetailForm : any){
   
   
-    console.log(this.newuserForm.value)
-    this.http.post(this.serverUrl, this.newuserForm.value).subscribe((data : any)=>{
+    console.log(this.jobdetailForm.value)
+    this.http.post(this.serverUrl, this.jobdetailForm.value).subscribe((data : any)=>{
   
       console.log(data)
     });
