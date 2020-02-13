@@ -4,20 +4,25 @@ var Schema = mongoose.Schema;
 
 var Detailsschema = new Schema({
 
-    fullName: String,
+    title: String,
 
-    phone: Number,
+    companyhq: String,
 
-    email: {
+    companyName: {
         type: String,
         unique: true
 
     },
-    address: {
+    jobtype: {
         type: String,
-
-
+    },
+    state: {
+        type: String,
+    },
+    jobdescription: {
+        type: String,
     }
+
 
 });
 

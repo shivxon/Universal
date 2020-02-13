@@ -14,22 +14,72 @@
 
 
                 <div class="form-group">
-                    <input type="text" formControlName="fullName" placeholder="Full Name" required>
+                    <input type="text" formControlName="title" placeholder="Title" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <input type="text" formControlName="companyhq" placeholder="Company HQ" required>
                 </div>
                 <br>
                 <div class="form-group">
 
-                    <input placeholder="Email" formControlName="email" name="email" required>
+                    <input placeholder="Company Name" formControlName="companyName" name="companyName" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <input type="radio" id="fullTime" formControlName="jobtype" value="fullTime">
+                    <label for="fullTime">Full Time</label><br>
+                    <input type="radio" id="contract" formControlName="jobtype" value="contract">
+                    <label for="contract">Contract</label><br>
                 </div>
                 <br>
                 <div class="form-group">
+                    <select formControlName="state">
+                    <option value="JAMMU and KASHMIR">JAMMU and KASHMIR</option>
+                    <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                    <option value="PUNJAB">PUNJAB</option>
+                    <option value="CHANDIGARH">CHANDIGARH</option>
+                    <option value="UTTRANCHAL">UTTRANCHAL</option>
+                    <option value="HARAYANA">HARAYANA</option>
+                    <option value="DELHI">DELHI</option>
+                    <option value="RAJASTHAN">RAJASTHAN</option>
+                    <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+                    <option value="BIHAR">BIHAR</option>
+                    <option value="SIKKIM">SIKKIM</option>
+                    <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                    <option value="NAGALAND">NAGALAND</option>
+                    <option value="MANIPUR">MANIPUR</option>
+                    <option value="MIZORAM">MIZORAM</option>
+                    <option value="TRIPURA">TRIPURA</option>
+                    <option value="MEGHALAYA">MEGHALAYA</option>
+                    <option value="ASSAM">ASSAM</option>
+                    <option value="WEST BENGAL">WEST BENGAL</option>
+                    <option value="JHARKHAND">JHARKHAND</option>
+                    <option value="ORRISA">ORRISA</option>
+                    <option value="CHHATTISGARH">CHHATTISGARH</option>
+                    <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                    <option value="GUJRAT">GUJRAT</option>
+                    <option value="DAMAN and DIU">DAMAN and DIU</option>
+                    <option value=">DADARA and NAGAR HAVELI">DADARA and NAGAR HAVELI<option>
+                    <option value="MAHARASHTRA">MAHARASHTRA</option>
+                    <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                    <option value="KARNATAKA">KARNATAKA</option>
+                    <option value="GOA">GOA</option>
+                    <option value="LAKSHADWEEP">LAKSHADWEEP</option>
+                    <option value="KERALA">KERALA</option>
+                    <option value="TAMIL NADU">TAMIL NADU</option>
+                    <option value="PONDICHERRY">PONDICHERRY</option>
+                    <option value="ANDAMAN and NICOBAR ISLANDS">ANDAMAN and NICOBAR ISLANDS</option>
+                    <option value="TELANGANA">TELANGANA</option>
+                    </select>
 
-                    <input placeholder="Phone" formControlName="phone" name="phone" type='number' required>
                 </div>
                 <br>
+                <br>
                 <div class="form-group">
-
-                    <input placeholder="Address" formControlName="address" name="address" type='text' required>
+                    <textarea formControlName="jobdescription" id="" cols="30" rows="10" placeholder="Job Description"></textarea>
                 </div>
                 <br>
 

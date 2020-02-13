@@ -12,19 +12,25 @@ export class NewFormComponent {
     serverUrl = 'http://localhost:3000/newform';
 
     public newuserForm: FormGroup;
-    fullName = String;
-    email = String;
-    address = String;
-    phone = Number;
+    title = String;
+    companyhq = String;
+    companyName = String;
+    jobtype = String;
+    state = String;
+    jobdescription = String;
+
+  
   
     constructor( private router: Router, private  frmbuilder : FormBuilder,private http : HttpClient) {
       this.newuserForm = frmbuilder.group({
   
   
-        fullName : new FormControl(),
-        email : new FormControl(),
-        address  : new FormControl(),
-        phone : new FormControl(),
+        title : new FormControl(),
+        companyhq : new FormControl(),
+        companyName : new FormControl(),
+        jobtype : new FormControl(),
+        state : new FormControl(),
+        jobdescription : new FormControl(),
         
        });
    
@@ -37,7 +43,7 @@ export class NewFormComponent {
   save(newuserForm : any){
   
   
-    
+    console.log(this.newuserForm.value)
     this.http.post(this.serverUrl, this.newuserForm.value).subscribe((data : any)=>{
   
       console.log(data)
