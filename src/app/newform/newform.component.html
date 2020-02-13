@@ -1,0 +1,43 @@
+<div class="container">
+    <div class='row'>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="form_bg">
+            <form [formGroup]="newuserForm">
+
+
+                <div class="form-group">
+                    <input type="text" formControlName="fullName" placeholder="Full Name" required>
+                </div>
+                <br>
+                <div class="form-group">
+
+                    <input placeholder="Email" formControlName="email" name="email" required>
+                </div>
+                <br>
+                <div class="form-group">
+
+                    <input placeholder="Phone" formControlName="phone" name="phone" type='number' required>
+                </div>
+                <br>
+                <div class="form-group">
+
+                    <input placeholder="Address" formControlName="address" name="address" type='text' required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <button class="custom" (click)="save(newuserForm)">Save
+            </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
