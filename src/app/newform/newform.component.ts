@@ -6,13 +6,13 @@ import {HttpClient} from '@angular/common/http'
 @Component({
   selector: 'app-root',
   templateUrl: './newform.component.html',
-//   styleUrls: ['./app.component.css']
+ styleUrls: ['./newform.component.css']
 })
 export class NewFormComponent {
     serverUrl = 'http://localhost:3000/newform';
 
     public jobdetailForm: FormGroup;
-    
+
     title = String;
     companyhq = String;
     companyName = String;
@@ -32,6 +32,7 @@ export class NewFormComponent {
         jobtype : new FormControl(),
         state : new FormControl(),
         jobdescription : new FormControl(),
+      
         
        });
    
@@ -43,7 +44,7 @@ export class NewFormComponent {
     }
   save(jobdetailForm : any){
   
-  
+
     console.log(this.jobdetailForm.value)
     this.http.post(this.serverUrl, this.jobdetailForm.value).subscribe((data : any)=>{
   

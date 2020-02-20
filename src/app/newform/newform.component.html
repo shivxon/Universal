@@ -1,92 +1,110 @@
 <div class="container">
-    <div class='row'>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
+    <div align="center" class='column'>
 
         <div class="form_bg">
+            <h1 style="color: rgb(15, 15, 14); padding-top: 20px;">Job Board</h1>
             <form [formGroup]="jobdetailForm">
-
-
                 <div class="form-group">
-                    <input type="text" formControlName="title" placeholder="Title" required>
-                </div>
-                <br>
+                    <mat-form-field style="width: 250px">
 
-                <div class="form-group">
-                    <input type="text" formControlName="companyhq" placeholder="Company HQ" required>
-                </div>
-                <br>
-                <div class="form-group">
+                        <!-- <mat-label>Title</mat-label> -->
+                        <input matInput type="text" formControlName="title" placeholder="Title" required>
 
-                    <input placeholder="Company Name" formControlName="companyName" name="companyName" required>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <input type="radio" id="fullTime" formControlName="jobtype" value="fullTime">
-                    <label for="fullTime">Full Time</label><br>
-                    <input type="radio" id="contract" formControlName="jobtype" value="contract">
-                    <label for="contract">Contract</label><br>
+                    </mat-form-field>
                 </div>
                 <br>
                 <div class="form-group">
-                    <select formControlName="state">
-                    <option value="JAMMU and KASHMIR">JAMMU and KASHMIR</option>
-                    <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
-                    <option value="PUNJAB">PUNJAB</option>
-                    <option value="CHANDIGARH">CHANDIGARH</option>
-                    <option value="UTTRANCHAL">UTTRANCHAL</option>
-                    <option value="HARAYANA">HARAYANA</option>
-                    <option value="DELHI">DELHI</option>
-                    <option value="RAJASTHAN">RAJASTHAN</option>
-                    <option value="UTTAR PRADESH">UTTAR PRADESH</option>
-                    <option value="BIHAR">BIHAR</option>
-                    <option value="SIKKIM">SIKKIM</option>
-                    <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
-                    <option value="NAGALAND">NAGALAND</option>
-                    <option value="MANIPUR">MANIPUR</option>
-                    <option value="MIZORAM">MIZORAM</option>
-                    <option value="TRIPURA">TRIPURA</option>
-                    <option value="MEGHALAYA">MEGHALAYA</option>
-                    <option value="ASSAM">ASSAM</option>
-                    <option value="WEST BENGAL">WEST BENGAL</option>
-                    <option value="JHARKHAND">JHARKHAND</option>
-                    <option value="ORRISA">ORRISA</option>
-                    <option value="CHHATTISGARH">CHHATTISGARH</option>
-                    <option value="MADHYA PRADESH">MADHYA PRADESH</option>
-                    <option value="GUJRAT">GUJRAT</option>
-                    <option value="DAMAN and DIU">DAMAN and DIU</option>
-                    <option value=">DADARA and NAGAR HAVELI">DADARA and NAGAR HAVELI<option>
-                    <option value="MAHARASHTRA">MAHARASHTRA</option>
-                    <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
-                    <option value="KARNATAKA">KARNATAKA</option>
-                    <option value="GOA">GOA</option>
-                    <option value="LAKSHADWEEP">LAKSHADWEEP</option>
-                    <option value="KERALA">KERALA</option>
-                    <option value="TAMIL NADU">TAMIL NADU</option>
-                    <option value="PONDICHERRY">PONDICHERRY</option>
-                    <option value="ANDAMAN and NICOBAR ISLANDS">ANDAMAN and NICOBAR ISLANDS</option>
-                    <option value="TELANGANA">TELANGANA</option>
-                    </select>
+                    <mat-form-field style="width: 250px">
 
+                        <input matInput type="text" formControlName="companyhq" placeholder="Company HQ" required>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div class="form-group">
+                    <mat-form-field style="width: 250px">
+
+                        <!-- <mat-label>Company Name</mat-label> -->
+                        <input matInput placeholder="Company Name" formControlName="companyName" name="companyName" required>
+
+                    </mat-form-field>
+                </div>
+                <br>
+
+
+
+                <div class="form-group">
+
+                    <mat-radio-group formControlName="jobtype">
+
+                        <mat-radio-button value="fullTime">Full Time</mat-radio-button> <br><br>
+                        <mat-radio-button value="contract">Contract</mat-radio-button>
+                    </mat-radio-group>
+
+                </div>
+                <br>
+                <div class="form-group">
+                    <mat-form-field style="width: 250px">
+                        <mat-label>
+                            State
+                        </mat-label>
+                        <br/>
+                        <mat-select formControlName="state" color="accent">
+
+                            <mat-option value="JAMMU & KASHMIR">JAMMU & KASHMIR</mat-option>
+                            <mat-option value="HIMACHAL PRADESH">HIMACHAL PRADESH</mat-option>
+                            <mat-option value="PUNJAB">PUNJAB</mat-option>
+                            <mat-option value="CHANDIGARH">CHANDIGARH</mat-option>
+                            <mat-option value="UTTRANCHAL">UTTRANCHAL</mat-option>
+                            <mat-option value="HARAYANA">HARAYANA</mat-option>
+                            <mat-option value="DELHI">DELHI</mat-option>
+                            <mat-option value="RAJASTHAN">RAJASTHAN</mat-option>
+                            <mat-option value="UTTAR PRADESH">UTTAR PRADESH</mat-option>
+                            <mat-option value="BIHAR">BIHAR</mat-option>
+                            <mat-option value="SIKKIM">SIKKIM</mat-option>
+                            <mat-option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</mat-option>
+                            <mat-option value="NAGALAND">NAGALAND</mat-option>
+                            <mat-option value="MANIPUR">MANIPUR</mat-option>
+                            <mat-option value="MIZORAM">MIZORAM</mat-option>
+                            <mat-option value="TRIPURA">TRIPURA</mat-option>
+                            <mat-option value="MEGHALAYA">MEGHALAYA</mat-option>
+                            <mat-option value="ASSAM">ASSAM</mat-option>
+                            <mat-option value="WEST BENGAL">WEST BENGAL</mat-option>
+                            <mat-option value="JHARKHAND">JHARKHAND</mat-option>
+                            <mat-option value="ORRISA">ORRISA</mat-option>
+                            <mat-option value="CHHATTISGARH">CHHATTISGARH</mat-option>
+                            <mat-option value="MADHYA PRADESH">MADHYA PRADESH</mat-option>
+                            <mat-option value="GUJRAT">GUJRAT</mat-option>
+                            <mat-option value="DAMAN and DIU">DAMAN and DIU</mat-option>
+                            <mat-option value="DADARA and NAGAR HAVELI">DADARA and NAGAR HAVELI</mat-option>
+                            <mat-option value="MAHARASHTRA">MAHARASHTRA</mat-option>
+                            <mat-option value="ANDHRA PRADESH">ANDHRA PRADESH</mat-option>
+                            <mat-option value="KARNATAKA">KARNATAKA</mat-option>
+                            <mat-option value="GOA">GOA</mat-option>
+                            <mat-option value="LAKSHADWEEP">LAKSHADWEEP</mat-option>
+                            <mat-option value="KERALA">KERALA</mat-option>
+                            <mat-option value="TAMIL NADU">TAMIL NADU</mat-option>
+                            <mat-option value="PONDICHERRY">PONDICHERRY</mat-option>
+                            <mat-option value="ANDAMAN and NICOBAR ISLANDS">ANDAMAN and NICOBAR ISLANDS</mat-option>
+                            <mat-option value="TELANGANA">TELANGANA</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
                 <br>
                 <br>
                 <div class="form-group">
-                    <textarea formControlName="jobdescription" id="" cols="30" rows="10" placeholder="Job Description"></textarea>
+                    <mat-form-field style="width: 250px">
+
+                        <textarea matInput formControlName="jobdescription" id="" cols="30" rows="10" placeholder="Job Description"></textarea>
+
+                    </mat-form-field>
                 </div>
                 <br>
-
                 <div class="form-group">
-                    <button class="custom" (click)="save(newuserForm)">Save
-            </button>
+                    <button mat-raised-button="" color="primary" class="custom" (click)="save(jobdetailForm)">Save
+                   </button>
                 </div>
+
+
             </form>
         </div>
     </div>

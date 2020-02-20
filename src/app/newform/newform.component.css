@@ -1,0 +1,39 @@
+.container {
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.form_bg {
+    height: 850px;
+    width: 550px;
+    background-color: rgb(221, 226, 226);
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Style the submit button */
+
+.form-group button {
+    border: 1px solid #ddd;
+    background-color: rgb(247, 241, 241);
+    color: rgb(62, 74, 247);
+}
+
+.form-group button:hover {
+    background-color: rgb(62, 74, 247);
+    color: rgb(247, 241, 241);
+}
+
+@media (max-width: 1000px) {
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
