@@ -1,0 +1,195 @@
+<div class="header">
+
+    <div class="header-container">
+        <h1> Reach the largest remote community on the web
+        </h1>
+        <div align="center" class='column'>
+
+            <div class="form_bg">
+
+                <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                    <mat-step [stepControl]="jobdetailForm">
+                        <form [formGroup]="jobdetailForm" class="form-field">
+                            <ng-template matStepLabel>Step 1
+                                <h2>Post a job</h2>
+                            </ng-template>
+
+                            <h2 style="color: rgb(253, 2, 2); padding-top: 20px; margin-left: 75px;">First, tell us about the position
+                            </h2>
+                            <!-- <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label> -->
+
+                            <div class="form-group" style="width: 800px; margin-left: 75px;">
+                                <mat-form-field style="width: 800px">
+
+                                    <mat-label style="color: black">
+                                        Job Title
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <input matInput type="text" formControlName="title">
+                                </mat-form-field>
+                                <h5 style="color: #909294;">
+                                    Example: “Senior Designer”. Titles must describe one position.</h5>
+
+                            </div>
+
+                            <div class="form-group" style="width: 400px;margin-left: 75px;">
+                                <mat-form-field style="width: 350px;">
+                                    <mat-label style="color: black">
+                                        Category
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <mat-select formControlName="category" color="accent">
+
+                                        <mat-option selected="" value="1">Design</mat-option>
+                                        <mat-option value="2">Programming</mat-option>
+                                        <mat-option value="7">Customer Support</mat-option>
+                                        <mat-option value="5">Copywriting</mat-option>
+                                        <mat-option value="6">DevOps &amp; Sysadmin</mat-option>
+                                        <mat-option value="9">Sales &amp; Marketing</mat-option>
+                                        <mat-option value="3">Business &amp; Management</mat-option>
+                                        <mat-option value="10">Finance &amp; Legal</mat-option>
+                                        <mat-option value="11">Product</mat-option>
+                                        <mat-option value="13">Administrative</mat-option>
+                                        <mat-option value="14">Education</mat-option>
+                                        <mat-option value="15">Translation &amp; Transcription</mat-option>
+                                        <mat-option value="16">Medical/Health</mat-option>
+                                        <mat-option value="4">All Other</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 350px; margin-left: 50px;">
+                                <mat-label style="color: black">
+                                    <b>
+                                Job Type</b>
+                                    <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                </mat-label>
+                                <br><br>
+                                <mat-radio-group formControlName="jobtype">
+
+                                    <mat-radio-button value="fullTime">Full Time</mat-radio-button>
+                                    <mat-radio-button value="contract" style="margin-left: 75px;">Contract</mat-radio-button>
+                                </mat-radio-group>
+
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-group" style="width: 400px; margin-left: 75px">
+                                <mat-form-field style="width: 350px">
+                                    <mat-label style="color: black">
+                                        Company HQ
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <input matInput type="text" formControlName="companyhq">
+                                </mat-form-field>
+                                <h5 style="color: #909294;"> Example: “Chicago, IL”, “Stockholm, Sweden”</h5>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 350px; margin-left: 50px;">
+                                <mat-form-field style="width: 350px">
+                                    <mat-label style="color: black">
+                                        Regional Restrictions
+                                    </mat-label>
+                                    <br/>
+                                    <mat-select formControlName="state" color="accent">
+
+                                        <mat-option value="Anywhere (100% Remote) Only">Anywhere (100% Remote) Only</mat-option>
+                                        <mat-option value="USA Only">USA Only</mat-option>
+                                        <mat-option value="North America Only">North America Only</mat-option>
+                                        <mat-option value="Europe Only">Europe Only</mat-option>
+                                        <mat-option value="Americas Only">Americas Only</mat-option>
+                                        <mat-option value="Canada Only">Canada Only</mat-option>
+                                        <mat-option value="EMEA Only">EMEA Only</mat-option>
+                                        <mat-option value="Asia Only">Asia Only</mat-option>
+                                        <mat-option value="Africa Only">Africa Only</mat-option>
+                                        <mat-option value="Other">Other</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 800px; margin-left: 75px;">
+                                <mat-form-field style="width: 800px">
+                                    <mat-label style="color: black">
+                                        How to Apply
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <input matInput type="text" formControlName="howtoapply">
+
+                                </mat-form-field>
+                            </div>
+                            <br>
+
+                            <div class="form-group" style="width: 800px; margin-left: 75px">
+                                <mat-form-field style="width: 800px">
+                                    <mat-label style="color: black">
+                                        Job Description
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <textarea matInput formControlName="jobdescription" id="" cols="30" rows="20"></textarea>
+
+                                </mat-form-field>
+                            </div>
+                            <h2 style="color: rgb(253, 2, 2); padding-top: 20px; width:800px; margin-left: 75px">Tell Us More About Your Company</h2>
+                            <h5 style="color: #909294; margin-left: 75px">
+                                <b>
+                            Posted before?</b> Just enter your
+                                <b>email</b> and
+                                <b>logo</b>, all other info will be pulled in from your last position!</h5>
+                            <br>
+                            <div class="form-group" style="width: 800px; margin-left: 75px">
+                                <mat-form-field style="width: 800px">
+                                    <mat-label style="color: black">
+                                        Company Name
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br>
+                                    <input matInput formControlName="companyName" name="companyName">
+
+                                </mat-form-field>
+                                <h5 style="color: #909294;">
+                                    Enter your company or organization’s name.
+                                </h5>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 800px; margin-left: 75px">
+                                <mat-form-field style="width: 800px">
+                                    <mat-label style="color: black">
+                                        Company Statement
+                                    </mat-label>
+                                    <br>
+                                    <input matInput formControlName="companyStatement" name="companyStatement">
+
+                                </mat-form-field>
+
+                                <h5 style="color: #909294;">
+                                    Enter your company or organization’s mission statement. This will be displayed on your company’s profile.</h5>
+                            </div>
+
+
+
+
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="">
+                        <ng-template matStepLabel>Step 2
+
+                            <h2>Preview your ad </h2>
+                        </ng-template>
+
+                    </mat-step>
+                    <mat-step [stepControl]="">
+                        <ng-template matStepLabel>Step 3
+
+                            <h2>Purchase </h2>
+                        </ng-template>
+
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </div>
+        </div>
+    </div>

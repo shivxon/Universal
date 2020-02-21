@@ -1,0 +1,26 @@
+.header-container h1 {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+
+/* .header-container {
+    background-color: lightcoral;
+} */
+
+.form_bg {
+    height: 850px;
+    width: 1000px;
+    text-align: left;
+}
+
+.form-field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+/* .form-group {
+    background-color: mintcream;
+} */

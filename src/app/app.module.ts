@@ -7,6 +7,11 @@ import {NewFormComponent} from './newform/newform.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
+import { LayoutModule }       from '@angular/cdk/layout';
+
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
@@ -38,12 +43,16 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {WeWorkComponent } from './we_work/wework.component'
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewFormComponent
+    NewFormComponent,
+    WeWorkComponent 
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -77,7 +86,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatToolbarModule,
     MatSnackBarModule,
     MatListModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatStepperModule,
+    AgGridModule,
+  
+    LayoutModule
     
   ],
   providers: [],
