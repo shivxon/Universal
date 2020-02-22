@@ -20,17 +20,17 @@ export class WeWorkComponent {
       this.jobdetailForm = frmbuilder.group({
   
   
-        title : new FormControl(),
+        jobTitle : new FormControl(),
+        category: new FormControl(),
+        jobType : new FormControl(),
         companyhq : new FormControl(),
-        companyName : new FormControl(),
-        jobtype : new FormControl(),
         state : new FormControl(),
-        jobdescription : new FormControl(),
-        companyStatement : new FormControl(),
         howtoapply : new FormControl(),
+        jobdescription : new FormControl(),
+        companyName : new FormControl(),
+        companyStatement : new FormControl(),
         companyWebsiteUrl: new FormControl(),
         email:new FormControl(),
-        category: new FormControl(),
         companydescription: new FormControl()
        });
       

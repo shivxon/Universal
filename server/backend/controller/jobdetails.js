@@ -1,17 +1,23 @@
-var DetailsModel = require('../model/details')
+var JobDetailsModel = require('../model/Jobdetails')
 
 
 const savejobdetails = async(req, res) => {
 
-    var Details = new DetailsModel({
-        title: req.body.title,
+    var JobDetails = new JobDetailsModel({
+        jobTitle: req.body.jobTitle,
+        category: req.body.category,
+        jobType: req.body.jobType,
         companyhq: req.body.companyhq,
-        companyName: req.body.companyName,
-        jobtype: req.body.jobtype,
         state: req.body.state,
-        jobdescription: req.body.jobdescription
+        howtoapply: req.body.howtoapply,
+        jobdescription: req.body.jobdescription,
+        companyName: req.body.companyName,
+        companyStatement: req.body.companyStatement,
+        companyWebsiteUrl: req.body.companyWebsiteUrl,
+        email: req.body.email,
+        companydescription: req.body.companydescription,
     });
-    await Details.save();
+    await JobDetails.save();
     res.json({ message: 'Success' });
 
 

@@ -28,7 +28,7 @@
                                         <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
                                     </mat-label>
                                     <br/>
-                                    <input matInput type="text" formControlName="title">
+                                    <input matInput type="text" formControlName="jobTitle">
                                 </mat-form-field>
                                 <h5 style="color: #909294;">
                                     Example: “Senior Designer”. Titles must describe one position.</h5>
@@ -69,7 +69,7 @@
                                     <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
                                 </mat-label>
                                 <br><br>
-                                <mat-radio-group formControlName="jobtype">
+                                <mat-radio-group formControlName="jobType">
 
                                     <mat-radio-button value="fullTime">Full Time</mat-radio-button>
                                     <mat-radio-button value="contract" style="margin-left: 75px;">Contract</mat-radio-button>
@@ -271,7 +271,10 @@
                         </div>
 
 
-
+                        <div class="form-group">
+                            <button mat-raised-button="" color="primary" class="custom" (click)="save(jobdetailForm)">Save
+                           </button>
+                        </div>
 
 
                     </mat-step>
