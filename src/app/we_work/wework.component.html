@@ -16,6 +16,8 @@
 
                             <h2 style="color: rgb(253, 2, 2); padding-top: 20px; margin-left: 75px;">First, tell us about the position
                             </h2>
+                            <h5 style="color: #909294; padding-top: 20px; margin-left: 350px;">REQUIRED FIELDS</h5>
+                            <h4 style="color: rgb(253, 2, 2); padding-top: 16px; margin-left: 5px;">●</h4>
                             <!-- <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label> -->
 
                             <div class="form-group" style="width: 800px; margin-left: 75px;">
@@ -169,11 +171,109 @@
                                 <h5 style="color: #909294;">
                                     Enter your company or organization’s mission statement. This will be displayed on your company’s profile.</h5>
                             </div>
+                            <div class="form-group" style="width: 400px; margin-left: 75px">
+                                <mat-form-field style="width: 350px">
+                                    <mat-label style="color: black">
+                                        Company's Website URL
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <input matInput type="text" formControlName="companyWebsiteUrl">
+                                </mat-form-field>
+                                <h5 style="color: #909294;">Example: https://mybusiness.com/</h5>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 400px; margin-left: 75px">
+                                <mat-form-field style="width: 350px">
+                                    <mat-label style="color: black">
+                                        Email
+                                        <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
+                                    </mat-label>
+                                    <br/>
+                                    <input matInput type="email" formControlName="email">
+                                </mat-form-field>
+                                <h5 style="color: #909294;">We’ll send your receipt and confirmation email here.</h5>
+                            </div>
+                            <br>
+                            <div class="form-group" style="width: 800px; margin-left: 75px; margin-bottom: 20px;">
+                                <mat-form-field style="width: 800px">
+                                    <mat-label style="color: black">
+                                        Company Description
+                                    </mat-label>
+                                    <br/>
+                                    <textarea matInput formControlName="companydescription" id="" cols="30" rows="20"></textarea>
 
+                                </mat-form-field>
+                            </div>
 
 
 
                         </form>
+
+                        <div class="formcard">
+                            <form class="form-card">
+
+                                <h2 style="color: rgb(253, 2, 2); padding-top: 20px; margin-left: 75px;">Help Your Ad Stand Out
+
+                                </h2>
+                                <h5 style="color: #909294; padding-top: 20px; margin-left: 340px;">OPTIONAL, BUT HIGHLY RECOMMENDED</h5>
+
+
+
+                                <div class="flex-container">
+
+                                    <mat-card class='child'>
+                                        <h4 style="margin-top:3px;margin-left:75px;">GOOD</h4>
+                                        <h2 style="margin-top:2px;margin-left:70px;">$59</h2>
+
+                                        <p>Highlight your ad</p>
+                                        <p>Share in WWR Slack channels</p>
+                                        <p>2x Social media posts</p>
+                                        <p>Monthly stats email</p>
+                                        <p>Display your company logo</p>
+                                        <p>Pin ad for 7 days on main page</p>
+                                        <p>Featured email placement</p>
+
+
+
+                                    </mat-card>
+                                    <mat-card class="child">
+                                        <h4 style="margin-top:3px;margin-left:75px;">BETTER</h4>
+                                        <h2 style="margin-top:2px;margin-left:75px;">$89</h2>
+                                        <hr style="color: grey;">
+                                        <p>Highlight your ad</p>
+                                        <p>Share in WWR Slack channels</p>
+                                        <p>2x Social media posts</p>
+                                        <p>Monthly stats email</p>
+                                        <p>Display your company logo</p>
+                                        <p>Pin ad for 7 days on main page</p>
+                                        <p>Featured email placement</p>
+
+                                    </mat-card>
+                                    <mat-card class="child">
+                                        <h4 style="margin-top:3px;margin-left:75px;">BEST</h4>
+                                        <h2 style="margin-top:1px;margin-left:70px;">$139</h2>
+                                        <hr style="color: grey;">
+                                        <p>Highlight your ad</p>
+                                        <p>Share in WWR Slack channels</p>
+                                        <p>2x Social media posts</p>
+                                        <p>Monthly stats email</p>
+                                        <p>Display your company logo</p>
+                                        <p>Pin ad for 7 days on main page</p>
+                                        <p>Featured email placement</p>
+                                    </mat-card>
+
+                                    <h5 style="margin-top: 1px; margin-left: 400px;color: #909294;">GETS 2X THE VISIBILITY</h5>
+                                    <h5 style="margin-top: 1px; margin-left: 150px;color: #909294;">GETS 4X THE VISIBILITY</h5>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+
+
+
                     </mat-step>
                     <mat-step [stepControl]="">
                         <ng-template matStepLabel>Step 2

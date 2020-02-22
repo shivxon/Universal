@@ -32,7 +32,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MAT_DATE_LOCALE, MatNativeDateModule, NativeDateModule} from '@angular/material/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressBarModule,} from '@angular/material/progress-bar';
+import {MatCardModule,} from '@angular/material/card';
 import {MatCommonModule, MatRippleModule} from '@angular/material/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule } from '@angular/material/tree';
@@ -89,6 +90,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MatNativeDateModule,
     MatStepperModule,
     AgGridModule,
+    MatCardModule,
   
     LayoutModule
     

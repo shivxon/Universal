@@ -16,16 +16,6 @@ export class WeWorkComponent {
     firstFormGroup: FormGroup;
    // secondFormGroup: FormGroup;
 
-    title = String;
-    companyhq = String;
-    companyName = String;
-    jobtype = String;
-    state = String;
-    jobdescription = String;
-    companyStatement= String;
-    howtoapply:String;
-  
-  
     constructor( private router: Router, private  frmbuilder : FormBuilder,private http : HttpClient) {
       this.jobdetailForm = frmbuilder.group({
   
@@ -38,10 +28,11 @@ export class WeWorkComponent {
         jobdescription : new FormControl(),
         companyStatement : new FormControl(),
         howtoapply : new FormControl(),
-      
-        
+        companyWebsiteUrl: new FormControl(),
+        email:new FormControl(),
+        category: new FormControl(),
+        companydescription: new FormControl()
        });
-   
       
     }
 

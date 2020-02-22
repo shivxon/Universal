@@ -1,6 +1,12 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .header-container h1 {
-    text-align: center;
+    margin-left: 400px;
     padding-bottom: 100px;
+    margin-right: 400px;
 }
 
 
@@ -15,9 +21,46 @@
 }
 
 .form-field {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    /* background-color: green; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    border: solid 1px indigo;
+}
+
+.formcard {
+    margin-top: 100px;
+    height: 850px;
+    width: 952px;
+    text-align: left;
+}
+
+.form-card {
+    /* background-color: yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border: solid 1px indigo;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 60px;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    border: solid 1px indigo;
 }
 
 
