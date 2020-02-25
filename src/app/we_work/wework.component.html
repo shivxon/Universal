@@ -14,6 +14,48 @@
                                 <h2>Post a job</h2>
                             </ng-template>
 
+                            <div *ngIf="error === true" class="error" style="width: 800px; margin-left: 75px; margin-top: 20px ;    ">
+                                <ul>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['jobTitle']">
+                                        <h4> {{message.jobTitle.message}} </h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['category']">
+                                        <h4>{{message.category.message}} </h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['companyhq']">
+                                        <h4>{{message.companyhq.message}} </h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['howtoapply']">
+                                        <h4>{{message.howtoapply.message}} </h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['jobdescription']">
+                                        <h4>{{message.jobdescription.message}}</h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['companyName']">
+                                        <h4>{{message.companyName.message}}</h4>
+                                    </li>
+
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['companyWebsiteUrl']">
+                                        <h4>{{message.companyWebsiteUrl.message}}</h4>
+                                    </li>
+                                    <li style="color: rgb(253, 2, 2)" *ngIf="message['email']">
+                                        <h4>{{message.email.message}}</h4>
+                                    </li>
+
+
+
+
+                                </ul>
+
+
+                            </div>
+
                             <h2 style="color: rgb(253, 2, 2); padding-top: 20px; margin-left: 75px;">First, tell us about the position
                             </h2>
                             <h5 style="color: #909294; padding-top: 20px; margin-left: 350px;">REQUIRED FIELDS</h5>
@@ -29,6 +71,9 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="text" formControlName="jobTitle">
+
+
+                                    <!-- <mat-error *ngIf="jobdetailForm.controls['jobTitle'].hasError('required')">{{}}</mat-error> -->
                                 </mat-form-field>
                                 <h5 style="color: #909294;">
                                     Example: “Senior Designer”. Titles must describe one position.</h5>
@@ -126,15 +171,18 @@
                             <br>
 
                             <div class="form-group" style="width: 800px; margin-left: 75px">
-                                <mat-form-field style="width: 800px">
+                                <div style="width: 800px; margin-top: 20px;">
                                     <mat-label style="color: black">
                                         Job Description
                                         <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
                                     </mat-label>
                                     <br/>
-                                    <textarea matInput formControlName="jobdescription" id="" cols="30" rows="20"></textarea>
+                                    <br>
+                                    <quill-editor matInput #editor1 [modules]="modules" formControlName="jobdescription" (contentChanged)="logChange($event);">
 
-                                </mat-form-field>
+                                    </quill-editor>
+
+                                </div>
                             </div>
                             <h2 style="color: rgb(253, 2, 2); padding-top: 20px; width:800px; margin-left: 75px">Tell Us More About Your Company</h2>
                             <h5 style="color: #909294; margin-left: 75px">
@@ -183,7 +231,7 @@
                                 <h5 style="color: #909294;">Example: https://mybusiness.com/</h5>
                             </div>
                             <br>
-                            <div class="form-group" style="width: 400px; margin-left: 75px">
+                            <div class="form-group" style="width: 400px; margin-left: 50px">
                                 <mat-form-field style="width: 350px">
                                     <mat-label style="color: black">
                                         Email
@@ -195,19 +243,19 @@
                                 <h5 style="color: #909294;">We’ll send your receipt and confirmation email here.</h5>
                             </div>
                             <br>
+                            <br>
                             <div class="form-group" style="width: 800px; margin-left: 75px; margin-bottom: 20px;">
-                                <mat-form-field style="width: 800px">
+                                <div style="width: 800px; margin-top: 20px;">
                                     <mat-label style="color: black">
                                         Company Description
                                     </mat-label>
                                     <br/>
-                                    <textarea matInput formControlName="companydescription" id="" cols="30" rows="20"></textarea>
+                                    <br>
+                                    <quill-editor matInput #editor2 [modules]="modules" formControlName="companydescription" (contentChanged)="logChange($event);">
 
-                                </mat-form-field>
+                                    </quill-editor>
+                                </div>
                             </div>
-
-
-
                         </form>
 
                         <div class="formcard">
@@ -270,9 +318,8 @@
 
                         </div>
 
-
-                        <div class="form-group">
-                            <button mat-raised-button="" color="primary" class="custom" (click)="save(jobdetailForm)">Save
+                        <div class="form-group" style="margin-top: 50px; margin-left: 810px;">
+                            <button mat-flat-button="" color="warn" class="custom" (click)="save(jobdetailForm)">Continue to Step 2
                            </button>
                         </div>
 

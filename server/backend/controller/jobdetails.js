@@ -17,9 +17,18 @@ const savejobdetails = async(req, res) => {
         email: req.body.email,
         companydescription: req.body.companydescription,
     });
-    await JobDetails.save();
-    res.json({ message: 'Success' });
 
+    let error = JobDetails.validateSync();
+
+
+    if (error) {
+        return res.json({ 'message': error.errors });
+    } else {
+
+        await JobDetails.save();
+        res.json({ message: 'Success' });
+
+    }
 
 }
 

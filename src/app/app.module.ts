@@ -8,7 +8,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {katex} from 'katex';
+import { NgxQuillModule } from '@dimpu/ngx-quill'
 
+import { QuillModule } from 'ngx-quill'
 
 import { LayoutModule }       from '@angular/cdk/layout';
 
@@ -17,6 +20,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
+import{MatFormFieldModule} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -52,10 +57,12 @@ import { AgGridModule } from 'ag-grid-angular';
   declarations: [
     AppComponent,
     NewFormComponent,
-    WeWorkComponent 
+    WeWorkComponent,
+    
 
   ],
   imports: [
+    QuillModule.forRoot(),
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
@@ -74,6 +81,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MatDividerModule,
     MatPaginatorModule,
     MatIconModule,
+    MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
     MatInputModule,
@@ -91,8 +99,10 @@ import { AgGridModule } from 'ag-grid-angular';
     MatStepperModule,
     AgGridModule,
     MatCardModule,
-  
-    LayoutModule
+    NgxQuillModule,
+    LayoutModule,
+    QuillModule,
+    //katex
     
   ],
   providers: [],

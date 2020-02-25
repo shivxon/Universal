@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const jobdetails = require('../controller/jobdetails')
 
-router.get('/', function(req, res, next) {
+router.get('/newform', function(req, res, next) {
 
     res.send('Success');
 });

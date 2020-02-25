@@ -6,22 +6,22 @@ var JobDetailsschema = new Schema({
 
     jobTitle: {
         type: String,
-        required: true
+        required: [true, 'Job Type is required']
 
     },
 
     category: {
         type: String,
-        required: true
+        required: [true, 'Category is required']
 
     },
     jobType: {
         type: String,
-        required: true
+        required: [true, 'Job Type is Required']
     },
     companyhq: {
         type: String,
-        required: true
+        required: [true, 'Company HQ is required']
 
     },
     state: {
@@ -30,15 +30,15 @@ var JobDetailsschema = new Schema({
     howtoapply: {
 
         type: String,
-        required: true
+        required: [true, 'How to Apply is required']
     },
     jobdescription: {
         type: String,
-        required: true
+        required: [true, 'Job Description is required']
     },
     companyName: {
         type: String,
-        required: true
+        required: [true, 'Company Name is required']
 
     },
     companyStatement: {
@@ -46,12 +46,12 @@ var JobDetailsschema = new Schema({
     },
     companyWebsiteUrl: {
         type: String,
-        required: true
+        required: [true, 'Company Website URL is required']
 
     },
     email: {
         type: String,
-        required: true
+        required: [true, 'Email is required']
     },
     companydescription: {
         type: String,
@@ -61,6 +61,8 @@ var JobDetailsschema = new Schema({
 
 
 var JobDetailsModel = mongoose.model('Jobdetails', JobDetailsschema)
+
+
 
 
 module.exports = JobDetailsModel;

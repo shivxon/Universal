@@ -15,7 +15,7 @@
 } */
 
 .form_bg {
-    height: 850px;
+    height: 1300px;
     width: 1000px;
     text-align: left;
 }
@@ -23,16 +23,17 @@
 .form-field {
     margin-top: 100px;
     margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #d1cccc;
     /* background-color: green; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border: solid 1px indigo;
+    border: 1px;
 }
 
 .formcard {
     margin-top: 100px;
-    height: 850px;
+    height: 720px;
     width: 952px;
     text-align: left;
 }
@@ -42,7 +43,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border: solid 1px indigo;
+    box-shadow: 1px 1px 2px 2px #d1cccc;
+    border: 1px;
 }
 
 .flex-container {
@@ -60,7 +62,13 @@
     margin-left: 50px;
     margin-bottom: 20px;
     justify-content: flex-start;
-    border: solid 1px indigo;
+    border: solid 1px;
+    /* box-shadow: 1.5px 1.5px 2px 2px #d1cccc; */
+}
+
+.error {
+    background-color: rgb(253, 188, 176);
+    border-radius: 5px 5px 5px 5px;
 }
 
 
