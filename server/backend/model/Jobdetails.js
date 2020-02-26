@@ -6,7 +6,7 @@ var JobDetailsschema = new Schema({
 
     jobTitle: {
         type: String,
-        required: [true, 'Job Type is required']
+        required: [true, 'Job Title is required']
 
     },
 

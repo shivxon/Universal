@@ -71,9 +71,9 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="text" formControlName="jobTitle">
+                                    <mat-error *ngIf="jobdetailForm.controls['jobTitle'].hasError('required')"> Job Title is Required</mat-error>
 
 
-                                    <!-- <mat-error *ngIf="jobdetailForm.controls['jobTitle'].hasError('required')">{{}}</mat-error> -->
                                 </mat-form-field>
                                 <h5 style="color: #909294;">
                                     Example: “Senior Designer”. Titles must describe one position.</h5>
@@ -104,6 +104,7 @@
                                         <mat-option value="16">Medical/Health</mat-option>
                                         <mat-option value="4">All Other</mat-option>
                                     </mat-select>
+                                    <mat-error *ngIf="jobdetailForm.controls['category'].hasError('required')"> Category is Required</mat-error>
                                 </mat-form-field>
                             </div>
                             <br>
@@ -118,6 +119,10 @@
 
                                     <mat-radio-button value="fullTime">Full Time</mat-radio-button>
                                     <mat-radio-button value="contract" style="margin-left: 75px;">Contract</mat-radio-button>
+                                    <br>
+                                    <br>
+                                    <!-- <mat-error *ngIf="jobdetailForm.controls['jobType'].hasError('required')"> <small>
+                                        Job Type is Required </small></mat-error> -->
                                 </mat-radio-group>
 
                             </div>
@@ -131,6 +136,9 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="text" formControlName="companyhq">
+
+                                    <br>
+                                    <mat-error *ngIf="jobdetailForm.controls['companyhq'].hasError('required')"> Company HQ is Required </mat-error>
                                 </mat-form-field>
                                 <h5 style="color: #909294;"> Example: “Chicago, IL”, “Stockholm, Sweden”</h5>
                             </div>
@@ -154,6 +162,8 @@
                                         <mat-option value="Africa Only">Africa Only</mat-option>
                                         <mat-option value="Other">Other</mat-option>
                                     </mat-select>
+                                    <br>
+                                    <mat-error *ngIf="jobdetailForm.controls['state'].hasError('required')">Regional Restrictions is Required </mat-error>
                                 </mat-form-field>
                             </div>
                             <br>
@@ -165,7 +175,8 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="text" formControlName="howtoapply">
-
+                                    <br>
+                                    <mat-error *ngIf="jobdetailForm.controls['howtoapply'].hasError('required')">How to Apply is Required </mat-error>
                                 </mat-form-field>
                             </div>
                             <br>
@@ -180,7 +191,8 @@
                                     <br>
                                     <quill-editor matInput #editor1 [modules]="modules" formControlName="jobdescription" (contentChanged)="logChange($event);">
 
-                                    </quill-editor>
+                                    </quill-editor> <br>
+                                    <!-- <mat-error *ngIf="jobdetailForm.controls['jobdescription'].hasError('required')"> <small> Job Description is Required </small> </mat-error> -->
 
                                 </div>
                             </div>
@@ -198,7 +210,8 @@
                                         <mat-label style="color: rgb(253, 2, 2);"> ●</mat-label>
                                     </mat-label>
                                     <br>
-                                    <input matInput formControlName="companyName" name="companyName">
+                                    <input matInput formControlName="companyName" name="companyName"><br>
+                                    <mat-error *ngIf="jobdetailForm.controls['companyName'].hasError('required')">Company Name is Required </mat-error>
 
                                 </mat-form-field>
                                 <h5 style="color: #909294;">
@@ -219,6 +232,33 @@
                                 <h5 style="color: #909294;">
                                     Enter your company or organization’s mission statement. This will be displayed on your company’s profile.</h5>
                             </div>
+
+
+                            <!-- <div class="form-group" style="width: 800px; margin-left: 75px">
+
+                                <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+                                    Just drag and drop files here
+                                </div>
+
+
+                                <div style="width: 800px">
+                                    <mat-file-upload-queue #fileUploadQueue [fileAlias]="'file'" [httpUrl]="" multiple>
+
+                                        <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+                                    </mat-file-upload-queue>
+                                </div>
+
+
+                            </div> -->
+
+
+
+
+
+
+
+
+
                             <div class="form-group" style="width: 400px; margin-left: 75px">
                                 <mat-form-field style="width: 350px">
                                     <mat-label style="color: black">
@@ -227,6 +267,8 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="text" formControlName="companyWebsiteUrl">
+                                    <br>
+                                    <mat-error *ngIf="jobdetailForm.controls['companyWebsiteUrl'].hasError('required')">Company's Website URL is Required </mat-error>
                                 </mat-form-field>
                                 <h5 style="color: #909294;">Example: https://mybusiness.com/</h5>
                             </div>
@@ -239,6 +281,9 @@
                                     </mat-label>
                                     <br/>
                                     <input matInput type="email" formControlName="email">
+                                    <br>
+                                    <mat-error *ngIf="jobdetailForm.controls['email'].hasError('required')">Email is Required </mat-error>
+
                                 </mat-form-field>
                                 <h5 style="color: #909294;">We’ll send your receipt and confirmation email here.</h5>
                             </div>
@@ -319,7 +364,7 @@
                         </div>
 
                         <div class="form-group" style="margin-top: 50px; margin-left: 810px;">
-                            <button mat-flat-button="" color="warn" class="custom" (click)="save(jobdetailForm)">Continue to Step 2
+                            <button mat-flat-button="" [disabled]="jobdetailForm.invalid" color="warn" class="custom" (click)="save(jobdetailForm)">Continue to Step 2
                            </button>
                         </div>
 

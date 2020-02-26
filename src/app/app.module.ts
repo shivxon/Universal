@@ -31,7 +31,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { MatFileUploadModule } from 'angular-material-fileupload';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
@@ -87,6 +87,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MatInputModule,
     MatExpansionModule,
     MatGridListModule,
+    MatFileUploadModule,
     MatSliderModule,
     MatGridListModule,
     MatTableModule,

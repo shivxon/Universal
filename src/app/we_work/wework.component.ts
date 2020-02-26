@@ -1,5 +1,5 @@
-import { Component, ViewChild  } from '@angular/core';
-import{FormGroup,FormControl,FormBuilder,} from '@angular/forms'
+import { Component, ViewChild,  ElementRef } from '@angular/core';
+import{FormGroup,FormControl,FormBuilder,Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http'
 
@@ -13,6 +13,7 @@ export class WeWorkComponent {
 
    @ViewChild('editor1', {static: false}) editor1;
    @ViewChild('editor2', {static: false}) editor2;
+   @ViewChild('fileUploadQueue', {static: false}) addressProof: ElementRef;
 
     serverUrl = 'http://localhost:3000/newform';
 
@@ -35,18 +36,47 @@ export class WeWorkComponent {
       this.jobdetailForm = frmbuilder.group({
   
   
-        jobTitle : new FormControl(),
-        category: new FormControl(),
-        jobType : new FormControl(),
-        companyhq : new FormControl(),
+        jobTitle : ['',
+        Validators.compose([
+          Validators.required
+        ])],
+        category:['',
+        Validators.compose([
+          Validators.required
+        ])],
+        jobType : ['',
+        Validators.compose([
+          Validators.required
+        ])],
+        companyhq : ['',
+        Validators.compose([
+          Validators.required
+        ])],
         state : new FormControl(),
-        howtoapply : new FormControl(),
-        jobdescription : new FormControl(),
-        companyName : new FormControl(),
+        howtoapply : ['',
+        Validators.compose([
+          Validators.required
+        ])],
+        jobdescription :['',
+        Validators.compose([
+          Validators.required
+        ])],
+        companyName : ['',
+        Validators.compose([
+          Validators.required
+        ])],
         companyStatement : new FormControl(),
-        companyWebsiteUrl: new FormControl(),
-        email:new FormControl(),
-        companydescription: new FormControl()
+        fileUploadQueue:new FormControl(),
+        companyWebsiteUrl: ['',
+        Validators.compose([
+          Validators.required
+        ])],
+        email:['',
+        Validators.compose([
+          Validators.required
+        ])],
+        companydescription: new FormControl(),
+        
        });
       
     }
@@ -80,5 +110,11 @@ export class WeWorkComponent {
     console.log(this.editor1);
     console.log(this.editor2);
     console.log($event);
+
+      
+
+
+
+    0
   }
 }
