@@ -1,21 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {NewFormComponent} from './newform/newform.component'
+import {SignUpFormComponent} from './signup/signup.component'
 import {WeWorkComponent } from './we_work/wework.component'
-
+import {RazorPayComponent} from './payment/razorpay.component'
+import {AwsComponent } from './aws-sdk/aws.component'
 const routes: Routes = [
   {
-    path: 'newform',
+    path: 'signup',
     pathMatch: 'full',
-    component: NewFormComponent
+    component: SignUpFormComponent
   },
   {
     path: 'wework',
     pathMatch: 'full',
     component: WeWorkComponent },
-    
-  
+    {
+      path: 'razorpay',
+      pathMatch: 'full',
+      component: RazorPayComponent },
 
+      {
+        path: 'aws-sdk',
+        pathMatch: 'full',
+        component: AwsComponent },
+  
 ];
 
 @NgModule({

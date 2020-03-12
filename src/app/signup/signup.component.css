@@ -1,0 +1,35 @@
+.container {
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.form_bg {
+    height: 600px;
+    width: 550px;
+    box-shadow: 1px 1px 2px 2px #d1cccc;
+    border: 1px;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Style the submit button */
+
+.form-group button {
+    border: 1px solid #ddd;
+    background-color: rgb(62, 74, 247);
+    color: #ddd
+}
+
+@media (max-width: 1000px) {
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

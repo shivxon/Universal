@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NewFormComponent} from './newform/newform.component'
+import {SignUpFormComponent} from './signup/signup.component'
+import {RazorPayComponent} from './payment/razorpay.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {RecaptchaModule} from 'ng-recaptcha'
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 import {katex} from 'katex';
 import { NgxQuillModule } from '@dimpu/ngx-quill'
@@ -51,13 +54,16 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {WeWorkComponent } from './we_work/wework.component'
 import { AgGridModule } from 'ag-grid-angular';
+import {AwsComponent } from './aws-sdk/aws.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewFormComponent,
+    SignUpFormComponent,
     WeWorkComponent,
+    RazorPayComponent,
+    AwsComponent
     
 
   ],
@@ -103,10 +109,18 @@ import { AgGridModule } from 'ag-grid-angular';
     NgxQuillModule,
     LayoutModule,
     QuillModule,
+   // RecaptchaV3Module,
+    RecaptchaModule
+    
+    
+    
     //katex
     
   ],
-  providers: [],
+  providers: [
+
+     ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+   
