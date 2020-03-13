@@ -40,82 +40,59 @@ const savejobdetails = async(req, res) => {
 
 }
 
-const signupdetails = async(req, res) => {
 
+const VerifyCaptcha = async(req, res) => {
+    try {
+        let token = req.body.recaptcha;
+        const secretkey = "6Lc2Od8UAAAAAB9NdGJ-auypfUnSHScJZ0ZpHsoh";
+        const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
 
-    var Signupdetails = new SignupDetailsModel({
-
-        email: req.body.data.email,
-        password: req.body.data.password,
-    });
-
-
-    let error = Signupdetails.validateSync();
-
-
-    if (error) {
-
-        res.json({ 'message': error.errors });
-
-    } else {
-
-        verifycaptcha = async(req, res) => {
-
-            console.log(req.body.recaptcha)
-            let token = req.body.recaptcha;
-
-            const secretkey = "6Lc2Od8UAAAAAB9NdGJ-auypfUnSHScJZ0ZpHsoh";
-
-            const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
-
-            // console.log(secretkey)
-            // console.log(token)
-            // console.log(req.connection.remoteAddress)
-
-
-            if (token === null || token === undefined) {
-                res.status(201).send({ success: false, message: "Token is empty or invalid" })
-                return console.log("token empty");
-
-
-            }
-
-            request(url, function(err, response, body) {
-                //the body is the data that contains success message
-                body = JSON.parse(body);
-
-                //console.log(data)
-                console.log(body)
-                    //check if the   validation failed
-                if (body.success !== undefined && !body.success) {
-                    res.send({ success: false, 'message': "recaptcha failed" });
-                    return console.log("failed")
-                } else
-
-
-                {
-                    //if passed response success message to client
-
-
-                    console.log("im working")
-                    return res.send({ "success": true, 'message': "recaptcha passed" });
-
+        if (token === null || token === undefined) {
+            return res.status(400).send({ "message": "token is invalid" })
+        } else {
+            await request(url, async function(err, response, body) {
+                if (body) {
+                    body = JSON.parse(body);
+                    //check if the  validation failed
+                    if (body.success !== undefined && !body.success) {
+                        return res.status(400).send({ success: false, 'message': "recaptcha failed" });
+                    } else {
+                        //if passed response success message to client
+                        await SaveSignupDetails(req, res);
+                    }
+                } else if (err) {
+                    return res.status(400).send({ 'message': "FAILED" });
                 }
-            })
-
-
+            });
         }
-
-        await Signupdetails.save();
+    } catch (error) {
+        console.log(error);
+        res.status(400).json(error);
     }
-
-
 }
 
 
+const SaveSignupDetails = async(req, res) => {
+    try {
+        var Signupdetails = new SignupDetailsModel({
+            email: req.body.data.email,
+            password: req.body.data.password,
+        });
+        let error = Signupdetails.validateSync();
+        if (error) {
+            return res.status(400).json({ 'message': error.errors });
+        } else {
+            await Signupdetails.save();
+            return res.status(200).send({ "success": true, 'message': "recaptcha passed and data saved" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400).json(error);
+    }
+}
 
 
 module.exports = {
     savejobdetails,
-    signupdetails
+    VerifyCaptcha
 };

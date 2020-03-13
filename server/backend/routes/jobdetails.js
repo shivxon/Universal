@@ -7,7 +7,7 @@ router.get('/newform', function(req, res, next) {
     res.send('Success');
 });
 router.post('/newform', jobdetails.savejobdetails);
-router.post('/token_validate', jobdetails.signupdetails);
+router.post('/token_validate', jobdetails.VerifyCaptcha);
 
 
 module.exports = router;

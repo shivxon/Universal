@@ -1,29 +1,21 @@
 import { Component } from '@angular/core';
-import{FormGroup,FormControl,FormBuilder,} from '@angular/forms'
-import { Router } from '@angular/router';
-
 import * as AWS from 'aws-sdk';
 import * as S3 from 'aws-sdk/clients/s3';
-//import { WindowRefService } from './window-ref.service';
 
-import {HttpClient} from '@angular/common/http'
 
 @Component({
   selector: 'aws-sdk',  
   templateUrl: './aws.component.html',
  styleUrls: ['./aws.component.css'],
-//  providers: [WindowRefService]
+
 })
 export class AwsComponent {
 
-  image : Array<object> = [];
- // image:any =[];
-  
-constructor( private router: Router,){}
-   
-      
  
+  image:any =[];
   
+constructor(){}
+   
     navigateOnBoarding() {
     
 
@@ -60,10 +52,5 @@ constructor( private router: Router,){}
          
        });
       }
-
-
-  
-     
-  
 
 }
