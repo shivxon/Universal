@@ -67,37 +67,14 @@ export class SignUpFormComponent {
       
     }
 
-    // renderReCaptcha() {
-    //   window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
-    //     'sitekey' : '6Lf9y98UAAAAALHz2mTA9nd1o1UxdrOXm5kONBRa ',
-    //     'callback': (response) => {
-
-    //       console.log(response)
-    //       this.response = response;
-    //     }
-    //   });
-    // }
+    
 
 
-    // addRecaptchaScript() {
- 
-    //   window['grecaptchaCallback'] = () => {
-    //     this.renderReCaptcha();
-    //   }
-     
-    //   (function(d, s, id, obj){
-    //     var js, fjs = d.getElementsByTagName(s)[0];
-    //     if (d.getElementById(id)) { obj.renderReCaptcha(); return;}
-    //     js = d.createElement(s); js.id = id;
-    //     js.src = "https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit";
-    //     fjs.parentNode.insertBefore(js, fjs);
-    //   }(document, 'script', 'recaptcha-jssdk', this));
-     
-    // }
+   
 
-    // ngOnInit() {
-    //   this.addRecaptchaScript();
-    // }
+   ngOnInit() {
+   
+    }
 
     public resolved(captchaResponse: string) {
       
@@ -110,10 +87,7 @@ export class SignUpFormComponent {
 
     }
     
-    // public executeImportantAction(): void {
-    //   this.recaptchaV3Service.execute('importantAction')
-    //     .subscribe((token) => console.log(token));
-    // }
+    
   
     navigateOnBoarding() {
       // this.reCaptchaV3Service.execute(this.siteKey, 'homepage', (token) => {

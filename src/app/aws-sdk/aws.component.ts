@@ -15,16 +15,19 @@ import {HttpClient} from '@angular/common/http'
 //  providers: [WindowRefService]
 })
 export class AwsComponent {
-   
-  image:any =[];
+
+  image : Array<object> = [];
+ // image:any =[];
   
-    constructor( private router: Router,){}
+constructor( private router: Router,){}
    
       
  
   
     navigateOnBoarding() {
     
+
+       // console.log( this.image)
     }
 
     fileEvent(fileInput: any) {
@@ -51,14 +54,16 @@ export class AwsComponent {
          if (err) {
            console.log(err, 'there was an error uploading your file');
          }
+
+        // this.image.push(data)
          console.log(data)
-         console.log( this.image)
+         
        });
       }
 
 
   
-   
+     
   
 
 }

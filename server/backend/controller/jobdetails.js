@@ -50,66 +50,65 @@ const signupdetails = async(req, res) => {
     });
 
 
-    verifycaptcha = async(req, res) => {
-
-        console.log(req.body.recaptcha)
-        let token = req.body.recaptcha;
-
-        const secretkey = "6Lc2Od8UAAAAAB9NdGJ-auypfUnSHScJZ0ZpHsoh";
-
-        const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
-
-        // console.log(secretkey)
-        // console.log(token)
-        // console.log(req.connection.remoteAddress)
+    let error = Signupdetails.validateSync();
 
 
-        if (token === null || token === undefined) {
-            res.status(201).send({ success: false, message: "Token is empty or invalid" })
-            return console.log("token empty");
+    if (error) {
+
+        res.json({ 'message': error.errors });
+
+    } else {
+
+        verifycaptcha = async(req, res) => {
+
+            console.log(req.body.recaptcha)
+            let token = req.body.recaptcha;
+
+            const secretkey = "6Lc2Od8UAAAAAB9NdGJ-auypfUnSHScJZ0ZpHsoh";
+
+            const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
+
+            // console.log(secretkey)
+            // console.log(token)
+            // console.log(req.connection.remoteAddress)
+
+
+            if (token === null || token === undefined) {
+                res.status(201).send({ success: false, message: "Token is empty or invalid" })
+                return console.log("token empty");
+
+
+            }
+
+            request(url, function(err, response, body) {
+                //the body is the data that contains success message
+                body = JSON.parse(body);
+
+                //console.log(data)
+                console.log(body)
+                    //check if the   validation failed
+                if (body.success !== undefined && !body.success) {
+                    res.send({ success: false, 'message': "recaptcha failed" });
+                    return console.log("failed")
+                } else
+
+
+                {
+                    //if passed response success message to client
+
+
+                    console.log("im working")
+                    return res.send({ "success": true, 'message': "recaptcha passed" });
+
+                }
+            })
 
 
         }
 
-        request(url, function(err, response, body) {
-            //the body is the data that contains success message
-            body = JSON.parse(body);
-
-            //console.log(data)
-            console.log(body)
-                //check if the   validation failed
-            if (body.success !== undefined && !body.success) {
-                res.send({ success: false, 'message': "recaptcha failed" });
-                return console.log("failed")
-            } else {
-
-                //if passed response success message to client
-
-                let error = Signupdetails.validateSync();
-
-
-                if (error) {
-
-
-
-                    return res.json({ 'message': error.errors });
-
-
-                } else {
-
-                    Signupdetails.save();
-
-                    console.log("im working")
-                    res.send({ "success": true, 'message': "recaptcha passed" });
-
-                }
-
-            }
-        })
-
-
+        await Signupdetails.save();
     }
-    await verifycaptcha(req, res);
+
 
 }
 
