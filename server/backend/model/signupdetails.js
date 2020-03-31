@@ -1,6 +1,5 @@
 var mongoose = require("mongoose")
 const emailvalidation = require('../services/users/emailandpasswordvalidation');
-
 const passwordvalidation = require('../services/users/emailandpasswordvalidation');
 
 var Schema = mongoose.Schema;

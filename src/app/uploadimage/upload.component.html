@@ -1,0 +1,20 @@
+<div class="container">
+    <div align="center" class='column'>
+        <h1 style="color: rgb(15, 15, 14); padding-top: 100px;">Create New Account</h1>
+
+        <form [formGroup]="driverUpdateAccountForm" style="margin-top: 100px;" enctype="multipart/form-data">
+
+
+
+
+            <h1>back</h1>
+            <input type='file' (change)="onSelectFileBack($event)" name="image1">
+
+            <br>
+            <br>
+            <button type="submit" (click)="save(driverUpdateAccountForm)">Save Details
+              </button>
+
+        </form>
+    </div>
+</div>

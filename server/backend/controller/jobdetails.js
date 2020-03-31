@@ -3,11 +3,6 @@ var SignupDetailsModel = require('../model/signupdetails')
 const request = require('request');
 
 
-
-
-
-
-
 const savejobdetails = async(req, res) => {
 
     var JobDetails = new JobDetailsModel({
@@ -35,43 +30,37 @@ const savejobdetails = async(req, res) => {
 
         await JobDetails.save();
         res.json({ message: 'Success' });
-
     }
-
 }
-
-
-const VerifyCaptcha = async(req, res) => {
+const VerifyCaptcha = (req, res) => {
     try {
         let token = req.body.recaptcha;
         const secretkey = "6Lc2Od8UAAAAAB9NdGJ-auypfUnSHScJZ0ZpHsoh";
-        const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
 
-        if (token === null || token === undefined) {
-            return res.status(400).send({ "message": "token is invalid" })
-        } else {
-            await request(url, async function(err, response, body) {
-                if (body) {
-                    body = JSON.parse(body);
-                    //check if the  validation failed
-                    if (body.success !== undefined && !body.success) {
-                        return res.status(400).send({ success: false, 'message': "recaptcha failed" });
-                    } else {
-                        //if passed response success message to client
-                        await SaveSignupDetails(req, res);
-                    }
-                } else if (err) {
-                    return res.status(400).send({ 'message': "FAILED" });
+        if (token !== null && token !== undefined && token !== '' && req.body !== null && req.body !== undefined && req.body !== '') {
+
+            const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretkey}&response=${token}&remoteip=${req.connection.remoteAddress}`
+
+            request(url, function(err, response, body) {
+                body = JSON.parse(body);
+                //check if the  validation failed
+                if (body.success !== undefined && !body.success) {
+                    return res.status(400).send({ success: false, 'message': "recaptcha failed" });
+                } else {
+                    //if passed response success message to client
+                    // console.log(response)
+                    SaveSignupDetails(req, res);
                 }
             });
+        } else {
+            return res.status(400).send({ "message": "Invalid" })
+
         }
     } catch (error) {
         console.log(error);
-        res.status(400).json(error);
+        return res.status(400).json(error);
     }
 }
-
-
 const SaveSignupDetails = async(req, res) => {
     try {
         var Signupdetails = new SignupDetailsModel({
@@ -87,7 +76,7 @@ const SaveSignupDetails = async(req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(400).json(error);
+        return res.status(400).json(error);
     }
 }
 

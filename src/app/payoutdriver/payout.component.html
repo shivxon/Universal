@@ -1,0 +1,24 @@
+<div class="container">
+    <div align="center" class='column'>
+
+
+        <h1 style="color: rgb(15, 15, 14); padding-top: 100px;">Payout Payment</h1>
+
+        <form [formGroup]="PayoutDetailsForm" style="margin-top: 100px;">
+
+            <h2>Amount</h2>
+            <input type="text" formControlName="payoutAmount">
+
+
+            <br>
+            <h2>Currency Type</h2>
+            <input type="text" formControlName="currencyType">
+
+            <br>
+            <br>
+            <button (click)="save(PayoutDetailsForm)">Create Card 
+              </button>
+
+        </form>
+    </div>
+</div>

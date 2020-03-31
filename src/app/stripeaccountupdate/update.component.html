@@ -1,0 +1,45 @@
+<div class="container">
+    <div align="center" class='column'>
+        <h1 style="color: rgb(15, 15, 14); padding-top: 100px;">Create New Account</h1>
+
+        <form [formGroup]="driverUpdateAccountForm" style="margin-top: 100px;">
+
+            <h1>Company</h1>
+
+            <h2>Business Type</h2>
+            <input type="text" formControlName="companyBusinessType">
+            <br>
+            <h2>Name</h2>
+            <input type="text" formControlName="companyName">
+            <br>
+            <h2>Phone</h2>
+            <input type="text" formControlName="companyPhone">
+            <br>
+            <h2>Tax ID</h2>
+            <input type="text" formControlName="companyTaxID">
+            <br>
+            <h2>City</h2>
+            <input type="text" formControlName="companyAddreesCity">
+            <br>
+            <h2>Country</h2>
+            <input type="text" formControlName="companyAddreesCountry">
+            <br>
+            <h2>Line 1</h2>
+            <input type="text" formControlName="companyAddreesLine1">
+            <br>
+            <h2>Line 2</h2>
+            <input type="text" formControlName="companyAddreesLine2">
+            <br>
+            <h2>Postal Code</h2>
+            <input type="text" formControlName="companyAddreesPostalCode">
+            <br>
+            <h2>State</h2>
+            <input type="text" formControlName="companyAddreesState">
+            <br>
+            <br>
+            <button (click)="save(driverUpdateAccountForm)">Save Details
+              </button>
+
+        </form>
+    </div>
+</div>

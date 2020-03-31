@@ -1,0 +1,24 @@
+<div class="container">
+    <div align="center" class='column'>
+
+
+        <h1 style="color: rgb(15, 15, 14); padding-top: 100px;">Create New Account</h1>
+
+        <form [formGroup]="driverAccountForm" style="margin-top: 100px;">
+
+            <h2>Email</h2>
+            <input type="email" formControlName="email">
+            <br>
+            <h2>Country</h2>
+            <input type="text" formControlName="country">
+            <br>
+            <h2>Type</h2>
+            <input type="text" formControlName="type">
+            <br>
+            <br>
+            <button (click)="save(driverAccountForm)">Create
+              </button>
+
+        </form>
+    </div>
+</div>

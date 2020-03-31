@@ -1,0 +1,67 @@
+lokesh
+
+await stripe.accounts.update(
+            'acct_1GOhTwBTFhcW8pRB', {
+                business_type: "company",
+                company: {
+                    name: "lokesh",
+                    phone: '(555)678-1212',
+                    tax_id: "1",
+                    owners_provided: true,
+                    address: {
+                        city: "Schenectady",
+                        country: 'US',
+                        line1: "123 State St",
+                        line2: "",
+                        postal_code: "12345",
+                        state: "NY",
+                    },
+                },
+                external_account: {
+                    object: 'bank_account',
+                    account_number: '000123456789',
+                    routing_number: '110000000',
+                    country: 'US',
+                    currency: 'usd'
+                },
+                business_profile: {
+                    mcc: '5734',
+                    product_description: "We are a software company.",
+                    url: "https://www.happysingh.com",
+                },
+                tos_acceptance: {
+                    date: Math.floor(Date.now() / 1000),
+                    ip: req.connection.remoteAddress,
+                },
+            },
+            function(err, account) {
+                // asynchronously called
+                console.log(account);
+            }
+        );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

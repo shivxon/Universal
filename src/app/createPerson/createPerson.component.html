@@ -1,0 +1,64 @@
+<div class="container">
+    <div align="center" class='column'>
+        <h1 style="color: rgb(15, 15, 14); padding-top: 100px;">Create New Account</h1>
+
+        <form [formGroup]="newPersonAccountForm" style="margin-top: 100px;" enctype="multipart/form-data">
+
+
+            <h1>Person</h1>
+
+            <h2>First Name</h2>
+            <input type="text" formControlName="personFirstName">
+            <br>
+            <h2>Last Name</h2>
+            <input type="text" formControlName="personLastName">
+            <br>
+            <h2>Dob: Day"</h2>
+            <input type="text" formControlName="personDobDay">
+            <br>
+            <h2>Dob: Month</h2>
+            <input type="text" formControlName="personDobMonth">
+            <br>
+            <h2>Dob: Year</h2>
+            <input type="text" formControlName="personDobYear">
+            <br>
+            <h2>City</h2>
+            <input type="text" formControlName="personAdressCity">
+            <br>
+            <h2>Country</h2>
+            <input type="text" formControlName="personAdressCountry">
+            <br>
+            <h2>Line 1</h2>
+            <input type="text" formControlName="personAdressLine1">
+            <br>
+            <h2>Line 2</h2>
+            <input type="text" formControlName="personAdressLine2">
+            <br>
+            <h2>Postal Code</h2>
+            <input type="text" formControlName="personAdressPostalCode">
+            <br>
+            <h2>State</h2>
+            <input type="text" formControlName="personAdressState">
+            <br>
+            <h2>SSN</h2>
+            <input type="text" formControlName="ssn">
+            <br>
+            <h2>Phone</h2>
+            <input type="text" formControlName="personPhone">
+            <br>
+            <h2>Email</h2>
+            <input type="text" formControlName="personEmail">
+            <br>
+            <h1>front</h1>
+            <input type='file' (change)="onSelectFileFront($event)" name="file1">
+            <br>
+            <h1>back</h1>
+            <input type='file' (change)="onSelectFileBack($event)" name="file2">
+            <br>
+            <br>
+            <button (click)="save(newPersonAccountForm)">Save Details
+              </button>
+
+        </form>
+    </div>
+</div>

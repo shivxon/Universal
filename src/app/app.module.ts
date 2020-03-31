@@ -5,7 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SignUpFormComponent} from './signup/signup.component'
 import {RazorPayComponent} from './payment/razorpay.component'
+import {StripePayComponent} from './stripepayment/stripe.component'
+import {StripeNewAccountComponent} from './stripenewaccount/newaccount.component'
+import {StripeUpdateComponent} from './stripeaccountupdate/update.component'
+import {StripeUploadComponent} from './uploadimage/upload.component'
+import {CreatePassengerComponent} from './createPassenger/create.component'
+
+import {CardDetailsComponent} from './cardToken/carddetails.component'
+import {PaymentComponent} from './addpayment/payment.component'
+import {PayoutDetailsComponent} from './payoutdriver/payout.component'
+import {NewPersonComponent} from './createPerson/createPerson.component'
+
+
+
+import { FileDropDirective, FileSelectDirective} from 'ng2-file-upload';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgStripeModule } from 'ng-stripe';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {RecaptchaModule} from 'ng-recaptcha'
@@ -63,7 +79,18 @@ import {AwsComponent } from './aws-sdk/aws.component'
     SignUpFormComponent,
     WeWorkComponent,
     RazorPayComponent,
-    AwsComponent
+    AwsComponent,
+    StripePayComponent,
+    StripeNewAccountComponent ,
+    StripeUpdateComponent,
+    StripeUploadComponent,
+    FileDropDirective, 
+    FileSelectDirective,
+    CreatePassengerComponent,
+    CardDetailsComponent,
+    PaymentComponent,
+    PayoutDetailsComponent,
+    NewPersonComponent
     
 
   ],
@@ -110,7 +137,8 @@ import {AwsComponent } from './aws-sdk/aws.component'
     LayoutModule,
     QuillModule,
    // RecaptchaV3Module,
-    RecaptchaModule
+    RecaptchaModule,
+    NgStripeModule
     
     
     
