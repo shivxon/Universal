@@ -33,7 +33,7 @@
     "ag-grid-angular": "^22.1.1",
     "ag-grid-community": "^22.1.1",
     "angular-material-fileupload": "^2.0.0",
-    "aws-sdk": "^2.638.0",
+    "aws-sdk": "^2.814.0",
     "express": "^4.15.2",
     "katex": "^0.11.1",
     "moment": "^2.24.0",
