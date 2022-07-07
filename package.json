@@ -36,7 +36,7 @@
     "aws-sdk": "^2.638.0",
     "express": "^4.15.2",
     "katex": "^0.11.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng-quill": "^4.5.3",
     "ng-recaptcha": "^5.0.0",
     "ng-stripe": "0.0.4",
